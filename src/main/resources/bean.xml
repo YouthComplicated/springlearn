@@ -4,10 +4,10 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--包进行扫描 只要标注@Controller、@Service、@Repository、@Component-->
+    <!--&lt;!&ndash;包进行扫描 只要标注@Controller、@Service、@Repository、@Component&ndash;&gt;-->
     <!--<context:component-scan base-package="com.lanmo.bean"/>-->
 
-    <!--<bean id="student" class="com.lanmo.bean.Student">-->
+    <!--<bean id="student" class="com.lanmo.bean.Student" >-->
         <!--<property name="age" value="13"></property>-->
         <!--<property name="name" value="李四"></property>-->
     <!--</bean>-->
