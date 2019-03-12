@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 后置处理器
+ * 后置处理器加入到容器中
  * @author NJ
  * @date 2019/3/11 15:16
  */

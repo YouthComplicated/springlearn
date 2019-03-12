@@ -1,5 +1,6 @@
 package com.lanmo.config;
 
+import com.lanmo.bean.PersonFactoryBean;
 import com.lanmo.bean.Student;
 import com.lanmo.bean.Teacher;
 import com.lanmo.condition.LinuxCondition;
@@ -73,6 +74,14 @@ public class MainConfig2 {
      *  //2、ImportSelector
      *  //3、ImportBeanDefinitionRegistrar
      * 4、FactoryBean
+     *   默认使用getObject()创建对象
+     *   获取工厂bean本身,需要在id前面加&
      *
+     * 周期
      */
+
+    @Bean
+    public PersonFactoryBean personFactoryBean(){
+        return new PersonFactoryBean();
+    }
 }

@@ -3,6 +3,7 @@ import com.lanmo.bean.Person;
 import com.lanmo.bean.Student;
 import com.lanmo.config.MainConfig;
 import com.lanmo.config.MainConfig2;
+import com.sun.media.sound.SoftTuning;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,7 +12,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import java.util.Arrays;
 import java.util.Map;
 
-public class IocTest {
+public class IOCTest {
 
 
     AnnotationConfigApplicationContext acp = new AnnotationConfigApplicationContext(MainConfig2.class);
@@ -67,6 +68,16 @@ public class IocTest {
 //        Object animal = acp.getBean(Animal.class);
 //        System.out.println(animal);
 
+        //获取是getObject 创建的对象
+        Object personFactoryBean = acp.getBean("personFactoryBean");
+        Object personFactoryBean1 = acp.getBean("personFactoryBean");
+        System.out.println(personFactoryBean == personFactoryBean1);
+        System.out.println("personFactoryBean:"+personFactoryBean);
+        System.out.println("personFactory的类型："+personFactoryBean.getClass());
+        Object personFactoryBean2 = acp.getBean("&personFactoryBean");
+        System.out.println(personFactoryBean2);
+
+
     }
 
     public void printBeans(AnnotationConfigApplicationContext acp){
@@ -74,8 +85,6 @@ public class IocTest {
         for (String name : beanDefinitionNames){
             System.out.println(name);
         }
-
-
     }
 
 }
