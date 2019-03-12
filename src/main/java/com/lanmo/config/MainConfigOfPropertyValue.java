@@ -1,6 +1,7 @@
 package com.lanmo.config;
 
 import com.lanmo.bean.Person;
+import com.lanmo.bean.aware.Apple;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -19,6 +20,12 @@ public class MainConfigOfPropertyValue {
     public Person person(){
         return new Person();
     }
+
+    @Bean
+    public Apple apple(){
+        return new Apple();
+    }
+
 
 }
 
