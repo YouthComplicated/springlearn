@@ -47,7 +47,7 @@ import org.springframework.context.annotation.Configuration;
  *   容器创建对象:refresh(); -->> finishRefresh(); 容器刷新完成会发布ContextRefreshedEvent事件
  *	    publishEvent(new ContextRefreshedEvent(this));
  *   2)、自己发布的事件
- *   3)、容器关闭发布事件ContextClosedEvent\
+ *   3)、容器关闭发布事件ContextClosedEvent
  *
  *	    事件发布流程：
  *	    1)、获取事件的派发器，getApplicationEventMulticaster()
@@ -60,15 +60,18 @@ import org.springframework.context.annotation.Configuration;
  *      2)、先找id=applicationEventMulticaster组件
  *          如果没有this.applicationEventMulticaster = new SimpleApplicationEventMulticaster(beanFactory); 加入到容器中
  *
- *  【容器中那些监听器】
  *
- *
+ *  SmartInitializingSingleton
+ *       1)、IOC容器创建对象并refresh()
+ *       2)、finishBeanFactoryInitialization(beanFactory);初始化剩下的单实例bean
+ *          获取所有创建好的单实例bean,判断是否是SmartInitializingSingleton类型的
+ *          如果是就调用afterSingletonsInstantiated()方法
  *
  *
  * @author NJ
  *   @date 2019/3/13 17:38
  */
-@ComponentScan("com.lanmo.ext")
+@ComponentScan({"com.lanmo.ext"})
 @Configuration
 public class ExtConfig {
 
