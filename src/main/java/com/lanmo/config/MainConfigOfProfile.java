@@ -32,7 +32,7 @@ import java.beans.PropertyVetoException;
  * @author NJ
  * @date 2019/3/12 15:38
  */
-@Profile("test")
+@Profile("pro")
 @Configuration
 @PropertySource("classpath:/jdbc.properties")
 public class MainConfigOfProfile implements EmbeddedValueResolverAware{
@@ -65,7 +65,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
         comboPooledDataSource.setUser(userName);
         comboPooledDataSource.setPassword(pwd);
         comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/dev");
-        comboPooledDataSource.setDriverClass(driveClass);
+        comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
         return comboPooledDataSource;
     }
 
