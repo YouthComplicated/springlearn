@@ -1,5 +1,8 @@
-package com.lanmo.bean;
+package com.lanmo.mybean;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Teacher {
 
     private  Integer age;
@@ -48,5 +51,9 @@ public class Teacher {
         this.age = age;
         this.name = name;
         this.prefession = prefession;
+    }
+
+    public void say(){
+        System.out.println("hello");
     }
 }

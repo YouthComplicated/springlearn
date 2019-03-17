@@ -38,5 +38,9 @@ public class MainConfig {
         return new Student("张三",11333);
     }
 
+    @Bean
+    public Student anOtherstudent(){
+        return new Student("张三",11333);
+    }
 
 }

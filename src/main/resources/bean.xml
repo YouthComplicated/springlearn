@@ -7,10 +7,11 @@
     <!--&lt;!&ndash;包进行扫描 只要标注@Controller、@Service、@Repository、@Component&ndash;&gt;-->
     <!--<context:component-scan base-package="com.lanmo.bean"/>-->
 
-    <!--<bean id="student" class="com.lanmo.bean.Student" >-->
-        <!--<property name="age" value="13"></property>-->
-        <!--<property name="name" value="李四"></property>-->
-    <!--</bean>-->
+    <bean id="student" class="com.lanmo.bean.Student">
+        <property name="age" value="13"></property>
+        <property name="name" value="李四"></property>
+        <constructor-arg ref="conversionService"/>
+    </bean>
 
     <!--开启注解版-->
     <!--<tx:annotation-driven/>-->

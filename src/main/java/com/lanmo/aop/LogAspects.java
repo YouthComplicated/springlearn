@@ -1,6 +1,7 @@
 package com.lanmo.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 import java.util.Arrays;
@@ -40,5 +41,16 @@ public class LogAspects {
     @AfterThrowing(value = "pointCut()", throwing = "execption")
     public void logException(Exception execption){
         System.out.println("除法异常=====异常信息：{}"+execption);
+    }
+
+    @Around(value = "pointCut()")
+    public void logProcess(ProceedingJoinPoint jp){
+        try {
+            System.out.println("start.....");
+            jp.proceed();
+            System.out.println("end.....");
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
     }
 }

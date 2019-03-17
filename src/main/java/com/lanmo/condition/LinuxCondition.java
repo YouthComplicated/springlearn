@@ -24,7 +24,7 @@ public class LinuxCondition implements Condition {
         Environment environment = context.getEnvironment();
         //获取bean定义 可以去重添加bean
         BeanDefinitionRegistry registry = context.getRegistry();
-
+//        environment.containsProperty("")
         String property = environment.getProperty("os.name");
         if(property.contains("linxu")){
             return true;

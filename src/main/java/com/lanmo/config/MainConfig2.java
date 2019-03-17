@@ -7,10 +7,8 @@ import com.lanmo.condition.LinuxCondition;
 import com.lanmo.condition.MyImportBeanDefinitionRegistrar;
 import com.lanmo.condition.MyImportSelector;
 import com.lanmo.condition.WindowCondition;
-import org.junit.Test;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
-import org.springframework.core.env.ConfigurableEnvironment;
 
 //@Conditional(LinuxCondition.class)
 @Configuration

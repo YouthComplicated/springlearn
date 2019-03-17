@@ -1,5 +1,7 @@
 package com.lanmo.bean;
 
+import org.springframework.core.convert.ConversionService;
+
 /**
  * spring 配置方法
  *
@@ -18,6 +20,9 @@ public class Student {
 
     private String name;
     private Integer age;
+
+    public Student(ConversionService conversionService) {
+    }
 
     public String getName() {
         return name;
